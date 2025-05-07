@@ -4,8 +4,8 @@ class TextfieldApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-    home: Home(),
+    return const MaterialApp(
+      home: Home(),
     );
   }
 }
@@ -15,46 +15,138 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController Number = TextEditingController();
+    TextEditingController EmailController = TextEditingController();
     return Scaffold(
-    appBar: AppBar(
-      backgroundColor: Colors.blueAccent,
-    ),
-      body:  Column(
-        children: [
-          SizedBox(height: 100,),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: TextField (
-              controller: Number,
-              obscureText: false,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Checkout', style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+        ),),
+        backgroundColor: Colors.black,
+      ),
+
+      body:  SingleChildScrollView(
+        child: Padding(padding: EdgeInsets.only(top: 15, left: 15, right: 15), child: Column(
+          children: [
+
+            Padding(
+              padding: const EdgeInsets.only(right: 280),
+              child: Text('Billing Details', style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),),
+            ),
+
+            SizedBox(height: 15,),
+            TextField(
+              controller: EmailController,
+              decoration: InputDecoration(
+                  hintText: 'Email *',
+
+                  border: OutlineInputBorder(
+                  )
+              ),
+            ),
+            SizedBox(height: 15,),
+            TextField(
+              decoration: InputDecoration(
+                  hintText: 'Country/Region *',
+
+                  border: OutlineInputBorder(
+                  )
+              ),
+            ),
+            SizedBox(height: 15,),
+            TextField(
+              decoration: InputDecoration(
+                  hintText: 'Frist Name *',
+                  labelText: 'Frist Name',
+
+                  border: OutlineInputBorder(
+                  )
+              ),
+            ),
+            SizedBox(height: 15,),
+            TextField(
+              decoration: InputDecoration(
+                  hintText: 'Last Name *',
+                  labelText: 'Last Name',
+
+                  border: OutlineInputBorder(
+                  )
+              ),
+            ),
+            SizedBox(height: 15,),
+            TextField(
+              decoration: InputDecoration(
+                  hintText: 'Address *',
+
+                  border: OutlineInputBorder(
+                  )
+              ),
+            ),
+            SizedBox(height: 15,),
+            TextField(
+              decoration: InputDecoration(
+                  hintText: 'Apartment, Suite, etc. (Optional) ',
+
+                  border: OutlineInputBorder(
+                  )
+              ),
+            ),
+            SizedBox(height: 15,),
+            TextField(
+              decoration: InputDecoration(
+                  hintText: 'City * ',
+
+                  border: OutlineInputBorder(
+                  )
+              ),
+            ),
+            SizedBox(height: 15,),
+            TextField(
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-               prefixIcon: Icon(Icons.phone),
-                suffixIcon: Icon(Icons.remove_red_eye),
-                hintText: 'Enter Your Phone Number',
-                labelText: 'Phone Number',
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                labelStyle: TextStyle(
-                  color: Colors.green
-                ),
-                border: OutlineInputBorder(
+                  hintText: 'Post Code *',
 
-                )
-
+                  border: OutlineInputBorder(
+                  )
               ),
-
             ),
-          ),
-          ElevatedButton(onPressed: (){
-            print(Number.text);
-          }, child: Text('Submit')),
-          SizedBox(height: 10,),
-          ElevatedButton(onPressed: (){
-            Number.clear();
-          }, child: Text('Clear'))
-        ],
+            SizedBox(height: 15,),
+            TextField(
+              keyboardType: TextInputType.phone,
+              decoration: InputDecoration(
+                  hintText: 'Phone Number (Optional) ',
+
+                  border: OutlineInputBorder(
+                  )
+              ),
+            ),
+            SizedBox(height: 20,),
+            ElevatedButton(
+                style:  ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    fixedSize: Size(410, 60),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)
+                    )
+                ),
+                onPressed: (){
+                  print(EmailController.text);
+                }, child: Text('Place Order',style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold
+
+            ),))
+
+
+
+          ],
+        ),),
       ),
+
     );
   }
 }
