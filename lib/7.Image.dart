@@ -31,11 +31,10 @@ class Home extends StatelessWidget {
             ),
           ),
           Image.asset('assets/palestine.png',
-          height:100, width: 100,),
+            height:100, width: 100,),
 
         ],
       ),),
     );
   }
 }
-

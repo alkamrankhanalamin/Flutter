@@ -37,7 +37,7 @@ class Home extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.red, shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(100)
+                borderRadius: BorderRadius.circular(100)
             )),
             onPressed: () {
               print('ElevatedButton Pressed ');
