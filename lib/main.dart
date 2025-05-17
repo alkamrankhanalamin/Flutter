@@ -1,17 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:ostad_flutter/12.GridView.dart';
+import 'package:ostad_flutter/13.GridView_builder.dart';
 
-import 'package:flutter/cupertino.dart';
-import 'package:ostad_flutter/8.Navigator.dart';
-import 'package:ostad_flutter/10.practice.dart';
-
-import '6.TextFormField.dart';
-
-main() {
-runApp(PracticeToday());
+main () {
+  runApp(GridViewBuilderApk());
 }
-
-
-
-
-
-
 

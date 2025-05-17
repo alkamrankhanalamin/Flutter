@@ -1,46 +1,42 @@
 import 'package:flutter/material.dart';
-import '9.Navigatore_Login.dart';
 
-class Grid_View extends StatelessWidget {
-  const Grid_View({super.key});
+class GridViewApk extends StatelessWidget {
+  const GridViewApk({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: GridPage(),
+    );
+  }
+}
+
+class GridPage extends StatelessWidget {
+  const GridPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: const Text("Contact Grid"),
+        backgroundColor: Colors.black,
       ),
       body: GridView.count(
-        crossAxisCount: 2, // 2 columns for better spacing
-        padding: const EdgeInsets.all(8),
-        crossAxisSpacing: 5,
-        mainAxisSpacing: 8,
-        childAspectRatio: 3.5, // Adjust for ListTile-like appearance
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        padding: EdgeInsets.all(10),
         children: List.generate(100, (index) {
           return Card(
-            elevation: 2,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Row(
-                children: [
-                  const Icon(Icons.phone, color: Colors.green),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('Al Kamran Khan'),
-                        Text(
-                          "01883873265",
-                          style: const TextStyle(color: Colors.red),
-                        ),
-                      ],
-                    ),
+            color: Colors.brown,
+            child: Center(
+              child: ListTile(
+                title: Text(
+                  'Catagory $index',
+                  style: TextStyle(
+                    color: Colors.white,
                   ),
-                  const Icon(Icons.delete_forever_rounded, color: Colors.red),
-                ],
+                ),
+                leading: Icon(Icons.card_giftcard),
               ),
             ),
           );
@@ -49,5 +45,3 @@ class Grid_View extends StatelessWidget {
     );
   }
 }
-
-
